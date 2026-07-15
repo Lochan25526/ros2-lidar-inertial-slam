@@ -1,0 +1,32 @@
+# colcon
+build/
+install/
+log/
+
+# python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# editors / os
+*.swp
+*.swo
+.vscode/
+.idea/
+.DS_Store
+
+# bags & large capture data (kept out of git deliberately)
+*.bag
+*.db3
+bags/
+rosbag2_*/
+
+# build output / binaries
+*.o
+*.so
+*.a
+
+# Upstream drivers -- fetched via `vcs import src < lidar_slam.repos`, never vendored
+/src/rplidar_ros/
+/src/rf2o_laser_odometry/

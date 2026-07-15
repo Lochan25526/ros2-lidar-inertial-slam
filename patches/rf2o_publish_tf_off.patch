@@ -1,0 +1,30 @@
+diff --git a/launch/rf2o_laser_odometry.launch.py b/launch/rf2o_laser_odometry.launch.py
+index c8fee44..cea06a5 100644
+--- a/launch/rf2o_laser_odometry.launch.py
++++ b/launch/rf2o_laser_odometry.launch.py
+@@ -24,10 +24,11 @@ def generate_launch_description():
+                 parameters=[{
+                     'laser_scan_topic' : '/scan',
+                     'odom_topic' : '/odom_rf2o',
+-                    'publish_tf' : True,
++                    'publish_tf' : False,
+                     'base_frame_id' : 'base_link',
+                     'odom_frame_id' : 'odom',
+                     'init_pose_from_topic' : '',
+                     'freq' : 20.0}],
+             ),
+     ])
++
+diff --git a/src/CLaserOdometry2DNode.cpp b/src/CLaserOdometry2DNode.cpp
+index 2206777..e9d6b28 100644
+--- a/src/CLaserOdometry2DNode.cpp
++++ b/src/CLaserOdometry2DNode.cpp
+@@ -33,7 +33,7 @@ CLaserOdometry2DNode::CLaserOdometry2DNode(): Node("CLaserOdometry2DNode")
+   this->get_parameter("base_frame_id", base_frame_id);
+   this->declare_parameter<std::string>("odom_frame_id", "odom");
+   this->get_parameter("odom_frame_id", odom_frame_id);
+-  this->declare_parameter<bool>("publish_tf", true);
++  this->declare_parameter<bool>("publish_tf", false);
+   this->get_parameter("publish_tf", publish_tf);
+   this->declare_parameter<std::string>("init_pose_from_topic", "/base_pose_ground_truth");
+   this->get_parameter("init_pose_from_topic", init_pose_from_topic);

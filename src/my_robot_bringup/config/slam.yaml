@@ -1,0 +1,24 @@
+slam_toolbox:
+  ros__parameters:
+    use_sim_time: false
+
+    odom_frame: odom
+    map_frame: map
+    base_frame: base_link
+    scan_topic: /scan
+    mode: mapping
+
+    resolution: 0.03
+    map_update_interval: 1.0
+
+    minimum_travel_distance: 0.05
+    minimum_travel_heading: 0.05
+
+    transform_timeout: 0.2
+    tf_buffer_duration: 30.0
+
+    scan_buffer_size: 10
+    scan_buffer_maximum_scan_distance: 10.0
+
+    use_scan_matching: true
+    use_scan_barycenter: true

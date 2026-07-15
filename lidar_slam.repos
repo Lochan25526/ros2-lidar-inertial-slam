@@ -1,0 +1,17 @@
+# Upstream driver dependencies, pinned to the exact commits this work was built
+# against.
+#
+#   vcs import src < lidar_slam.repos
+#
+# rf2o_laser_odometry then needs patches/rf2o_publish_tf_off.patch applied --
+# by default rf2o broadcasts odom->base_link, which fights robot_localization's
+# EKF over the same transform. See the README.
+repositories:
+  rplidar_ros:
+    type: git
+    url: https://github.com/Slamtec/rplidar_ros.git
+    version: 24cc9b6dea97e045bda1408eaa867ce730fd3fc3
+  rf2o_laser_odometry:
+    type: git
+    url: https://github.com/MAPIRlab/rf2o_laser_odometry.git
+    version: b38c68e46387b98845ecbfeb6660292f967a00d3
