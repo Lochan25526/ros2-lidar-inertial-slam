@@ -151,6 +151,16 @@ with `robot_localization` publishing the same transform (`publish_tf: true` in `
 Two publishers on one transform makes the TF tree jitter. The patch changes the default in
 both the launch file and the `declare_parameter` call.
 
+## Related repositories
+
+Three parts of one internship project on the same Raspberry Pi robot:
+
+| Repository | What it does |
+|---|---|
+| **ros2-lidar-inertial-slam** | *(this repo)* LiDAR + IMU SLAM. Builds the map. |
+| [ros2-orbslam3-vio](https://github.com/Lochan25526/ros2-orbslam3-vio) | Camera-based SLAM with ORB-SLAM3, and the attempt at visual-inertial odometry. Also home to the `icm20948_ros2` IMU driver this repo needs. |
+| [ros2-nav2-navigation-sim](https://github.com/Lochan25526/ros2-nav2-navigation-sim) | Nav2 autonomous navigation, run on the map this repo produces. |
+
 ## License
 
 MIT — see [LICENSE](LICENSE). Upstream dependencies keep their own licenses; note that
